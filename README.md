@@ -1,37 +1,27 @@
-## Welcome to GitHub Pages
+## 欢迎来到 **Alex** 的博客
 
-You can use the [editor on GitHub](https://github.com/AlexCorleone/AlexCorleone.github.io/edit/master/README.md) to maintain and preview the content for your website in Markdown files.
 
-Whenever you commit to this repository, GitHub Pages will run [Jekyll](https://jekyllrb.com/) to rebuild the pages in your site, from the content in your Markdown files.
+### 博客列表
 
-### Markdown
+- ####  [Animation解析及中高级动画实现](https://juejin.im/post/59cc2d5e5188256c4b726d7b)
 
-Markdown is a lightweight and easy-to-use syntax for styling your writing. It includes conventions for
+- #### [[译]iOS RunLoop](https://juejin.im/post/59cc46e65188256fbd43a216)
 
-```markdown
-Syntax highlighted code block
+- #### [Swift实现八种经典排序算法](https://juejin.im/post/5aca4449518825555d478a00)
 
-# Header 1
-## Header 2
-### Header 3
+- #### [Objective-C中的消息转发](https://www.jianshu.com/p/662e5cd6570f) 
 
-- Bulleted
-- List
+- #### [GCD的基础使用总结(一)](https://www.jianshu.com/p/3473c32790a2) 
+    
+### 关于我
 
-1. Numbered
-2. List
+一名默默无闻的iOS开发者，脚踏实地的前行只为有一天仰望星空。
 
-**Bold** and _Italic_ and `Code` text
 
-[Link](url) and ![Image](src)
-```
+### 小提示
 
-For more details see [GitHub Flavored Markdown](https://guides.github.com/features/mastering-markdown/).
+Alex的联系方式:
 
-### Jekyll Themes
+- **邮箱：** AlexCorleone@163.com
 
-Your Pages site will use the layout and styles from the Jekyll theme you have selected in your [repository settings](https://github.com/AlexCorleone/AlexCorleone.github.io/settings). The name of this theme is saved in the Jekyll `_config.yml` configuration file.
-
-### Support or Contact
-
-Having trouble with Pages? Check out our [documentation](https://help.github.com/categories/github-pages-basics/) or [contact support](https://github.com/contact) and we’ll help you sort it out.
+- **QQ:** 1034131730
