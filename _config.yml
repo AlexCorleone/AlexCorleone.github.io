@@ -1,3 +1,10 @@
+
 theme: jekyll-theme-cayman
 
-encoding: UTF-8 with BOM
+title: "欢迎来到 Alex 的博客"
+
+description: "我是Alex、奋斗在iOS开发的路上~ ~ ~ ~ ~"   #网站介绍
+
+keyword: "AlexCorleone, 博客, AC, iOS, Apple, iPhone" #关键词
+
+author: "AlexCorleone"
