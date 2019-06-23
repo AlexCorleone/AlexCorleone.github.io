@@ -3,7 +3,7 @@
 
 ### 博客列表
 
-- ####  [Animation解析及中高级动画实现](https://juejin.im/post/59cc2d5e5188256c4b726d7b)
+- ####  [Animation解析及中高级动画实现](/docs/Blogs/AlexBlogAnimation20190623.md)
 
 - #### [[译]iOS RunLoop](https://juejin.im/post/59cc46e65188256fbd43a216)
 
