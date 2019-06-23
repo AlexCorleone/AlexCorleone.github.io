@@ -1,4 +1,6 @@
 
+# CoreAnimation解析及中高级动画实现  
+
 ## 一.CoreAnimation介绍
 
 [CoreAnimation](https://link.juejin.im/?target=https%3A%2F%2Fdeveloper.apple.com%2Fdocumentation%2Fquartzcore)是一套图像渲染和动画基础框架，其在iOS和OSX平台用于显示对象和实现动画效果。使用CoreAnimation框架，动画的大部分帧渲染都是苹果为我们做好的。我们只需要配置几个动画参数（如开始和结束的点）并调用动画开始的方法。接下来就把剩余的工作交给CoreAnimation，操作全部实际绘图工作是在图形渲染硬件加速处理的。这个自动的图像加速器将会产生高帧频和顺滑的动画效果而不会加重CPU的负荷、或使APP卡顿。
@@ -8,7 +10,7 @@ CoreAnimation是在UIKit和APPKit框架之下，并且被很好的整合到Cocoa
 
 下图是CoreAnimation在cocoa框架中的层级(图片来自苹果)
 
-![Animation Image 1 ](/images/AlexBlogsAnimation20190623/AnimationBlogImage1.png)
+ ![Animation Image 1 ](/images/AlexBlogsAnimation20190623/AnimationBlogImage1.png)
 
 CoreAnimation
 苹果对于CoreAnimation的介绍中首先讲述的是[CALayer](https://link.juejin.im/?target=https%3A%2F%2Fdeveloper.apple.com%2Fdocumentation%2Fquartzcore%2Fcalayer)，因为CALayer是视图显示的基础、同时是CAAnimation动画产生的的载体。所有的动画都是作用在CALayer上，通过更改CALayer的属性，将每一帧渲染出来就形成了我们视觉的动画效果。但是这篇博客主要介绍[CAAnimation](https://link.juejin.im/?target=https%3A%2F%2Fdeveloper.apple.com%2Fdocumentation%2Fquartzcore%2Fcaanimation)，所以直接先忽略了前面的CALayer介绍，关于CALayer会在下一篇的文章中做详细介绍。
@@ -21,7 +23,7 @@ CoreAnimation
 
 ![Animation Image  2 ](/images/AlexBlogsAnimation20190623/AnimationBlogImage2.png)
 
-动画类结构
+<center> 动画类结构 </center>
 ### 1.动画
 
 CAAnimation是CoreAnimation的抽象超类、而CAPropertyAnimation又是CAAnimation的抽象子类，正如我们所知道的我们不应该直接使用抽象类，而应该使用它们的子类，如CABasicAnimation(基础动画)、CAKeyFrameAnimation(关键帧动画)、CASpringAnimation(弹簧动画)等。
@@ -106,51 +108,60 @@ CALayer类定义了convertTime:fromLayer: 和convertTime:toLayer:方法，为了
 
 ![ ](/images/AlexBlogsAnimation20190623/AnimationBlogImage3.png)
 
-透明度
+<center> 透明度 </center>
+
 2.实现更换view背景色动画并延迟0.5秒执行
 
 ![ ](/images/AlexBlogsAnimation20190623/AnimationBlogImage4.png)
 
-背景色
+<center> 背景色 </center>
+
 3.实现view移动动画
 
 ![ ](/images/AlexBlogsAnimation20190623/AnimationBlogImage5.png)
 
-移动
+<center> 移动 </center>
+
 4.实现view旋转动画
 
 ![ ](/images/AlexBlogsAnimation20190623/AnimationBlogImage6.png)
 
-旋转
+<center> 旋转 </center>
+
 5.实现view放大缩小动画
 
 ![ ](/images/AlexBlogsAnimation20190623/AnimationBlogImage7.png)
 
-放大
+<center> 放大 </center>
 
 ![ ](/images/AlexBlogsAnimation20190623/AnimationBlogImage8.png)
 
-缩小
+<center> 缩小 </center>
+
 6.实现view弹簧效果动画
 
 ![ ](/images/AlexBlogsAnimation20190623/AnimationBlogImage9.png)
 
-弹簧
+<center> 弹簧 </center>
+
 7.实现view系统删除动画
 
 ![ ](/images/AlexBlogsAnimation20190623/AnimationBlogImage10.png)
 
-系统删除
+<center> 系统删除 </center>
+
 8.实现过渡动画
 
 ![ ](/images/AlexBlogsAnimation20190623/AnimationBlogImage11.png)
 
-过渡
+<center> 过渡 </center>
+
 9.事务实现view翻转动画
 
 ![ ](/images/AlexBlogsAnimation20190623/AnimationBlogImage12.png)
 
-事务翻转
+<center> 事务翻转 </center>
+
 10.实现view组合动画
 
 ![ ](/images/AlexBlogsAnimation20190623/AnimationBlogImage13.png)
@@ -168,83 +179,94 @@ UIView自带的动画是苹果给我提供的CAAnimation的封装，其动画实
 
 ![ ](/images/AlexBlogsAnimation20190623/AnimationBlogImage14.png)
 
-透明度
+<center> 透明度 </center>
+
 2.实现更改view的背景色
 
 ![ ](/images/AlexBlogsAnimation20190623/AnimationBlogImage15.png)
 
-背景色
+<center> 背景色 </center>
+
 3.实现view移动动画
 
 ![ ](/images/AlexBlogsAnimation20190623/AnimationBlogImage16.png)
 
-移动
+<center>移动 </center>
+
 4.实现view曲线移动
 
 ![ ](/images/AlexBlogsAnimation20190623/AnimationBlogImage17.png)
 
-曲线移动
+<center> 曲线移动 </center>
+
 5.实现view旋转动画
 
 ![ ](/images/AlexBlogsAnimation20190623/AnimationBlogImage18.png)
 
-旋转
+<center> 旋转 </center>
+
 6.实现viewX轴翻转动画
 
 ![ ](/images/AlexBlogsAnimation20190623/AnimationBlogImage19.png)
 
-X轴翻转
+<center> X轴翻转 </center>
+
 7.实现viewY轴翻转动画
 
 ![ ](/images/AlexBlogsAnimation20190623/AnimationBlogImage20.png)
 
-Y轴翻转
+<center> Y轴翻转 </center>
+
 8.实现view放大缩小动画
 
 ![ ](/images/AlexBlogsAnimation20190623/AnimationBlogImage21.png)
 
-放大
+<center> 放大 </center>
 
 ![ ](/images/AlexBlogsAnimation20190623/AnimationBlogImage22.png)
 
-缩小
+<center> 缩小 </center>
 
 ![ ](/images/AlexBlogsAnimation20190623/AnimationBlogImage23.png)
 
-函数实现
+<center> 函数实现 </center>
+
 9.实现view过渡动画
 
 ![ ](/images/AlexBlogsAnimation20190623/AnimationBlogImage24.png) 
 
-<br/>过渡
+<center> 过渡 </center>
 
 ![ ](/images/AlexBlogsAnimation20190623/AnimationBlogImage25.png)
 
-函数实现
+<center> 函数实现 </center>
 
 10.实现view弹簧动画
 
 ![ ](/images/AlexBlogsAnimation20190623/AnimationBlogImage26.png)
 
-弹簧动画
+<center> 弹簧动画 </center>
 
 ![ ](/images/AlexBlogsAnimation20190623/AnimationBlogImage27.png)
 
-函数实现
+<center> 函数实现 </center>
+
 11.事务动画
 
 ![ ](/images/AlexBlogsAnimation20190623/AnimationBlogImage28.png)
 
-事务
+<center> 事务 </center>
+
 12.实现view组动画
 
 ![ ](/images/AlexBlogsAnimation20190623/AnimationBlogImage29.png)
 
-组动画
+<center> 组动画 </center>
 
 ![ ](/images/AlexBlogsAnimation20190623/AnimationBlogImage30.png)
 
-函数实现
+<center> 函数实现 </center> 
+
 ## 四.自定义动画
 
 上面说了那么多，但是创建的动画效果都还是比较普通的。对于CAAnimation类族，这些只是他们强大功能的冰山一角。但是无论多么复杂的动画其实都是上面这些基础动画的聚合，只要我么能够想象出动画的执行逻辑，我们就可以使用CAAnimation类族实现相对复杂的动画。本人的想象力有限，于是我模仿微博的tabbar中间item点击按钮的点击弹出菜单效果，实现了简单的弹出菜单，具体的代码：[clonegit代码](https://link.juejin.im/?target=https%3A%2F%2Fgithub.com%2FAlexCorleone%2FPopMenuView.git)。由于不能上传视频所以这里就不放效果图了，感兴趣的可以去下载工程运行试看。
@@ -275,12 +297,13 @@ Y轴翻转
 
 ![ ](/images/AlexBlogsAnimation20190623/AnimationBlogImage31.png)
 
-动画属性值转换
+<center> 动画属性值转换 </center>
+
 CATransform3D的一些便捷的KeyPaths：
 
 ![ ](/images/AlexBlogsAnimation20190623/AnimationBlogImage32.png)
 
-CATransform3D
+<center> CATransform3D </center>
 
 
 
