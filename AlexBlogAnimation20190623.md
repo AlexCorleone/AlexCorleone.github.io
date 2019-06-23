@@ -1,4 +1,4 @@
-﻿
+
 ## 一.CoreAnimation介绍
 
 CoreAnimation是一套图像渲染和动画基础框架，其在iOS和OSX平台用于显示对象和实现动画效果。使用CoreAnimation框架，动画的大部分帧渲染都是苹果为我们做好的。我们只需要配置几个动画参数（如开始和结束的点）并调用动画开始的方法。接下来就把剩余的工作交给CoreAnimation，操作全部实际绘图工作是在图形渲染硬件加速处理的。这个自动的图像加速器将会产生高帧频和顺滑的动画效果而不会加重CPU的负荷、或使APP卡顿。
@@ -7,7 +7,8 @@ CoreAnimation是一套图像渲染和动画基础框架，其在iOS和OSX平台�
 CoreAnimation是在UIKit和APPKit框架之下，并且被很好的整合到Cocoa和Cocoa Touch的view中。同时CoreAnimation也给出了一些扩展的动画接口供我们使用。
 
 下图是CoreAnimation在cocoa框架中的层级(图片来自苹果)
-![Image of Yaktocat](https://user-gold-cdn.xitu.io/2017/9/28/5f2b2ad7ff941945d36342f702b9e5b3)
+
+![ ](https://user-gold-cdn.xitu.io/2017/9/28/5f2b2ad7ff941945d36342f702b9e5b3)
 
 CoreAnimation
 苹果对于CoreAnimation的介绍中首先讲述的是CALayer，因为CALayer是视图显示的基础、同时是CAAnimation动画产生的的载体。所有的动画都是作用在CALayer上，通过更改CALayer的属性，将每一帧渲染出来就形成了我们视觉的动画效果。但是这篇博客主要介绍CAAnimation，所以直接先忽略了前面的CALayer介绍，关于CALayer会在下一篇的文章中做详细介绍。
@@ -17,7 +18,8 @@ CoreAnimation
 上面已经说过了，CoreAnimation是一套图形渲染与动画框架，CALayer负责图形的渲染显示，而CAAnimation及其子类则负责动画的实现。通过CAAnimatin及其子类我们能够相对简单的实现一些复杂的layer动画。
 
 下面是整个CoreAnimation框架的所有动画类结构：
-![Image of Yaktocat](https://user-gold-cdn.xitu.io/2017/9/28/8036be4f939205c5cb1430fba10a8b0a)
+
+![ ](https://user-gold-cdn.xitu.io/2017/9/28/8036be4f939205c5cb1430fba10a8b0a)
 
 动画类结构
 ### 1.动画
@@ -102,56 +104,56 @@ CALayer类定义了convertTime:fromLayer: 和convertTime:toLayer:方法，为了
 
 ### 1.实现更改view透明度动画
 
-![Image of Yaktocat](https://user-gold-cdn.xitu.io/2017/9/28/ee365c9900eb9798ba0d4750aff8bcf4)
+![ ](https://user-gold-cdn.xitu.io/2017/9/28/ee365c9900eb9798ba0d4750aff8bcf4)
 
 透明度
 2.实现更换view背景色动画并延迟0.5秒执行
 
-![Image of Yaktocat](https://user-gold-cdn.xitu.io/2017/9/28/57ba0fc113c8c3684ebcda9f7e6ec3eb)
+![ ](https://user-gold-cdn.xitu.io/2017/9/28/57ba0fc113c8c3684ebcda9f7e6ec3eb)
 
 背景色
 3.实现view移动动画
 
-![Image of Yaktocat](https://user-gold-cdn.xitu.io/2017/9/28/7d0e4b4973e7817d985df0150ba7c42c)
+![ ](https://user-gold-cdn.xitu.io/2017/9/28/7d0e4b4973e7817d985df0150ba7c42c)
 
 移动
 4.实现view旋转动画
 
-![Image of Yaktocat](++++++ 5 +++++++++)
+![ ](++++++ 5 +++++++++)
 
 旋转
 5.实现view放大缩小动画
 
-![Image of Yaktocat](++++++ 6 +++++++++)
+![ ](++++++ 6 +++++++++)
 
 放大
 
-![Image of Yaktocat](++++++ 7 +++++++++)
+![ ](++++++ 7 +++++++++)
 
 缩小
 6.实现view弹簧效果动画
 
-![Image of Yaktocat](++++++ 8 +++++++++)
+![ ](++++++ 8 +++++++++)
 
 弹簧
 7.实现view系统删除动画
 
-![Image of Yaktocat](++++++ 9 +++++++++)
+![ ](++++++ 9 +++++++++)
 
 系统删除
 8.实现过渡动画
 
-![Image of Yaktocat](++++++ 10 +++++++++)
+![ ](++++++ 10 +++++++++)
 
 过渡
 9.事务实现view翻转动画
 
-![Image of Yaktocat](++++++ 11 +++++++++)
+![ ](++++++ 11 +++++++++)
 
 事务翻转
 10.实现view组合动画
 
-![Image of Yaktocat](++++++ 12 +++++++++)
+![ ](++++++ 12 +++++++++)
 
 UIView组合动画
 
@@ -164,81 +166,81 @@ UIView自带的动画是苹果给我提供的CAAnimation的封装，其动画实
 
 1.实现更改view透明度动画
 
-![Image of Yaktocat](++++++ 13 +++++++++)
+![ ](++++++ 13 +++++++++)
 
 透明度
 2.实现更改view的背景色
 
-![Image of Yaktocat](++++++ 14 +++++++++)
+![ ](++++++ 14 +++++++++)
 
 背景色
 3.实现view移动动画
 
-![Image of Yaktocat](++++++ 15 +++++++++)
+![ ](++++++ 15 +++++++++)
 
 移动
 4.实现view曲线移动
 
-![Image of Yaktocat](++++++ 16 +++++++++)
+![ ](++++++ 16 +++++++++)
 
 曲线移动
 5.实现view旋转动画
 
-![Image of Yaktocat](++++++ 17 +++++++++)
+![ ](++++++ 17 +++++++++)
 
 旋转
 6.实现viewX轴翻转动画
 
-![Image of Yaktocat](https://user-gold-cdn.xitu.io/2017/9/28/56a3f9fe87fa6149050333dea8c3a762)
+![ ](https://user-gold-cdn.xitu.io/2017/9/28/56a3f9fe87fa6149050333dea8c3a762)
 
 X轴翻转
 7.实现viewY轴翻转动画
 
-![Image of Yaktocat](https://user-gold-cdn.xitu.io/2017/9/28/435d7466a7a9b16c83ed2d82412ddfc9)
+![ ](https://user-gold-cdn.xitu.io/2017/9/28/435d7466a7a9b16c83ed2d82412ddfc9)
 
 Y轴翻转
 8.实现view放大缩小动画
 
-![Image of Yaktocat](https://user-gold-cdn.xitu.io/2017/9/28/4d380ddf501d1fec945ff2f9d9c4db20)
+![ ](https://user-gold-cdn.xitu.io/2017/9/28/4d380ddf501d1fec945ff2f9d9c4db20)
 
 放大
 
-![Image of Yaktocat](https://user-gold-cdn.xitu.io/2017/9/28/c4da04eefe2c5aafc1f6a13b4b503f2a)
+![ ](https://user-gold-cdn.xitu.io/2017/9/28/c4da04eefe2c5aafc1f6a13b4b503f2a)
 
 缩小
 
-![Image of Yaktocat](https://user-gold-cdn.xitu.io/2017/9/28/46f4ad5c02da56c5585f49ea6f7e9ae3)
+![ ](https://user-gold-cdn.xitu.io/2017/9/28/46f4ad5c02da56c5585f49ea6f7e9ae3)
 
 函数实现
 9.实现view过渡动画
 
-![Image of Yaktocat](https://user-gold-cdn.xitu.io/2017/9/28/d3fc11c0b60da84f03c50ee0355574cd) <br/>过渡
+![ ](https://user-gold-cdn.xitu.io/2017/9/28/d3fc11c0b60da84f03c50ee0355574cd) <br/>过渡
 
-![Image of Yaktocat](https://user-gold-cdn.xitu.io/2017/9/28/7e92d8d38e2db3f595142aa4805e9420)
+![ ](https://user-gold-cdn.xitu.io/2017/9/28/7e92d8d38e2db3f595142aa4805e9420)
 
 函数实现
 
 10.实现view弹簧动画
 
-![Image of Yaktocat](https://user-gold-cdn.xitu.io/2017/9/28/a449c808d3c30498760c9f6ada4d968e)
+![ ](https://user-gold-cdn.xitu.io/2017/9/28/a449c808d3c30498760c9f6ada4d968e)
 
 弹簧动画
 
-![Image of Yaktocat](https://user-gold-cdn.xitu.io/2017/9/28/4388860465226e6d03d6941831d550cf)
+![ ](https://user-gold-cdn.xitu.io/2017/9/28/4388860465226e6d03d6941831d550cf)
 
 函数实现
 11.事务动画
 
-![Image of Yaktocat](https://user-gold-cdn.xitu.io/2017/9/28/0e95512e12e2731b81f8e28ff0e2161a)
+![ ](https://user-gold-cdn.xitu.io/2017/9/28/0e95512e12e2731b81f8e28ff0e2161a)
 
 事务
 12.实现view组动画
 
-![Image of Yaktocat](https://user-gold-cdn.xitu.io/2017/9/28/f4a8f8e79870f53353a70ce8966e67c7)
+![ ](https://user-gold-cdn.xitu.io/2017/9/28/f4a8f8e79870f53353a70ce8966e67c7)
 
 组动画
 
-![Image of Yaktocat](https://user-gold-cdn.xitu.io/2017/9/28/2490bab3a375ba1e87a4f06dc59d2f59)
+![ ](https://user-gold-cdn.xitu.io/2017/9/28/2490bab3a375ba1e87a4f06dc59d2f59)
 
 函数实现
 ## 四.自定义动画
@@ -269,12 +271,12 @@ Y轴翻转
 
 当我们创建动画更改的layer属性为C语言的结构体时，我们必须将这些结构体转换为一个对象赋值给layer下面的表列出了C语言类型对应的转换Obj-C对象。
 
-![Image of Yaktocat](https://user-gold-cdn.xitu.io/2017/9/28/3d36e19cbd34a87797f4adec1f1a3ad2)
+![ ](https://user-gold-cdn.xitu.io/2017/9/28/3d36e19cbd34a87797f4adec1f1a3ad2)
 
 动画属性值转换
 CATransform3D的一些便捷的KeyPaths：
 
-![Image of Yaktocat](https://user-gold-cdn.xitu.io/2017/9/28/9a81193bc5e06b3d1550184210d04b8d)
+![ ](https://user-gold-cdn.xitu.io/2017/9/28/9a81193bc5e06b3d1550184210d04b8d)
 
 CATransform3D
 
