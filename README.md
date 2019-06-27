@@ -12,6 +12,8 @@
 - #### [Objective-C中的消息转发](https://www.jianshu.com/p/662e5cd6570f) 
 
 - #### [GCD的基础使用总结(一)](https://www.jianshu.com/p/3473c32790a2) 
+
+- #### [Runtime层相关实现细节分析](/docs/Blogs/AlexBlogRuntime20190623.md) 
     
 ### 关于我
 
