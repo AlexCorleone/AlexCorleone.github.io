@@ -15,6 +15,9 @@
 
 - #### [Runtime层相关实现细节分析](/docs/Blogs/AlexBlogRuntime20190623.md) 
     
+- #### [OpenGL实现简单的图片渲染](/docs/Blogs/AlexBlogOpenGLRenderImage20190810.md)
+
+
 ### 关于我
 
 一名默默无闻的iOS开发者，脚踏实地的前行只为有一天仰望星空。
