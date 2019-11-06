@@ -1,7 +1,7 @@
 ## Weak的实现及细节分析
 
 
-### Weak实现源码(关键词: `SideTable`，`weak_table_t`，`weak_entry_t`)
+### 一、Weak实现源码(关键词: `SideTable`，`weak_table_t`，`weak_entry_t`)
 
 在 **Runtime** 的源码NSObject.mm文件内，可以找到关于 `SideTable` 的定义；去掉内部关于 `spinlock_t` 的一些方法，`SideTable` 的结构定义如下:
 
@@ -85,7 +85,7 @@ void weak_unregister_no_lock(weak_table_t *weak_table, id referent, id *referrer
 void weak_clear_no_lock(weak_table_t *weak_table, id referent);
 ```
 
-### Weak对象的赋值分析
+### 二、Weak对象的赋值分析
 
 当属性或者成员变量是 **weak** 修饰的时候，赋值过程通常会调用下面的方法
 
@@ -267,7 +267,7 @@ id *referrer_id, bool crashIfDeallocating)
 }
 ```
 
-### Weak实现的内部功能函数细节分析
+### 三、Weak实现的内部功能函数细节分析
 
 
 weak_entry_insert方法负责将一个entry对象插入weak_table内部的weak_entries数组，实现如下:
@@ -459,7 +459,7 @@ weak实现中hash的实现如下：
 
 ```
 
-### Weak对象的释放
+### 四、Weak对象的释放
 
 在NSObject的 ```- (void)dealloc;``` 方法内部苹果通过调用  ```_objc_rootDealloc(self);```  来释放对象内存，而  ```void _objc_rootDealloc(id obj)``` 方法内部又调用了obj的  ```inline void objc_object::rootDealloc()```  方法，该方法内部接着调用了  ```id object_dispose(id obj)``` 方法，```object_dispose``` 方法通过调用 ```void *objc_destructInstance(id obj)``` 完成对象的销毁，关于 ```objc_destructInstance``` 的方法实现如下：
 
@@ -524,6 +524,7 @@ void weak_clear_no_lock(weak_table_t *weak_table, id referent_id)
 }
 ```
 
-### 总结
-
+### 五、总结
+weak原理实现相对来说并不复杂，苹果通过一个全局的静态StripedMap存储`SideTable`，通过对象可以查找到对应的`SideTable`，而`SideTable`内部维护了一个`weak_table_t`表,然后通过Hash的形式将对象与`weak_entry_t`形成映射；而对象所有的weak指针存储到`weak_entry_t`内部的referrers结构体数组中，这样在对象被dealloc时便可以通过对象Hash值来找到对应的`weak_entry_t`将指向该对象的Weak指针指向nil。
+继续加油！！！！
 

@@ -2,7 +2,7 @@
 
 ### 前言
 
-Runtime作为Objective-C的运行时的核心一直是iOS开发者必须要学习了解的，从事iOS开发也有一段时间，之前都是断断续续看Runtime的源码或者是通过别人的博客思路来学习了解Runtime。从今年三月份开始系统的研读了Runtime的源码、发现大致和之前了解的相同(网上各路大神太多了),刚好最近项目不忙，所以决定写几篇博客记录下这段经历，LET'S GO。
+Runtime作为Objective-C的运行时的核心一直是iOS开发者必须要学习了解的，从事iOS开发也有一段时间，之前都是断断续续看Runtime的源码或者是通过别人的博客思路来学习了解Runtime。从今年三月份开始系统的研读了Runtime的源码、发现大致和之前了解的相同(网上各路大神太多了,摊手脸！),刚好最近项目不忙，所以决定写几篇博客记录下这段经历，LET'S GO。
 
 通过翻码发现苹果在库初始化之前由dyld程序注册了三个通知程序，来实现整个RunTime系统的组建、+load的调用、以及资源释放。
 
@@ -32,7 +32,7 @@ void _objc_init(void)
 }
 ```
 
-![dyld源码](https://github.com/opensource-apple/dyld) 感兴趣的可以去了解。
+[dyld源码](https://github.com/opensource-apple/dyld) 感兴趣的可以去了解。
 
 ###  一、map_images方法的实现分析
 
@@ -127,7 +127,7 @@ void map_images_nolock(unsigned mhCount, const char * const mhPaths[],
         /*Alex注释:
          * 初始化自动释放池AutoreleasePool(AutoreleasePoolPage)、全局SideTableBuf变量(StripedMap<SideTable>)
          * SideTableBuf是Runtime的核心、
-           关于SideTableBuf本人的其他博客有介绍到欢迎翻阅。
+           关于SideTableBuf本人的其他博客有介绍欢迎翻阅。
          */
         arr_init();
     }
@@ -784,7 +784,9 @@ void _unload_image(header_info *hi)
 
 
 ### 四、总结
-    
+   
+ 这次源码阅读学习到了类是如何从共享缓存、读取、转化、以及初始化这样一个装载过程,学到了类、方法、协议等在内存中存储的形式以及类元类超类之间的关系。在load_images模块也证实了之前关于category和class中+load方法的认知。
+ 未来可期，加油少年！！
 
 
 
