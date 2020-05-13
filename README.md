@@ -19,6 +19,7 @@
 
 - #### [Runtime 重拾 objc_init()](/docs/Blogs/AlexBlogRuntimeInit20191011.md) 
     
+- #### [shell实现自动打包](/docs/Blogs/AlexBlogShellForFramework20200513.md) 
 
 
 ### 关于我
